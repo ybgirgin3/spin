@@ -1,0 +1,21 @@
+# view.html
+{% extends "root/base.html" %}
+
+{% block title %}
+View
+{% endblock %}
+
+
+{% block content %}
+
+
+<h2> 
+    İlanlar
+</h2>
+{{ user }} kullancısı tarafından kayıt edilen ilanlar
+{% for td in user.item.all %}
+<p><a href="/{{td.id}}">{{td.name}}</a></p>
+{% endfor %}
+
+
+{% endblock %}

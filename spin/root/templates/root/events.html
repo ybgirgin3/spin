@@ -1,0 +1,27 @@
+{% extends "root/base.html" %}
+{% block content %}
+
+<h2>
+  Tüm İlanlar
+</h2>
+
+
+<br>
+
+
+{% for item in all_items %}
+<ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ item.user }}
+        <ul>
+          <li><span style="color: #28a745">Hata Adı:</span> {{ item.name }}
+                <ul>
+                    {% for it in item.item_set.all %}
+                        {{ it }}<br>
+                    {% endfor %}
+                </ul>
+ 
+            </li>
+        </ul>
+    </ul>
+{% endfor %}
+
+{% endblock %}

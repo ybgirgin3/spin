@@ -1,0 +1,41 @@
+eski:
+zaten var olan bir projeye yapılacak eklentiler, 
+kullanıcı hesabı 290 TL,
+çark arkaplan programı, entegresi, JS ve CSS görselliği: 379 TL
+
+
+yeni:
+kullanıcı hesabı:
+      profil oluşturma kısmı: 300 TL
+      giriş yapılabilmek eklentiler gibi 3rd parti eklentiler: herbiri 79 TL
+
+ilanlar sayfası:
+      arama motoru: toplam ->  349 TL
+        1- ilanlar sayfası arama motoru: 200 TL
+        2- aranılan cümleye göre reklamı yapılacak şeyler: 149 TL
+
+
+      ilanlar sayfasına eklenecekler: toplam ->  1348 TL
+        1- sıfırdan ilanları oluştururken ilan sıralamasını değiştirecek özel değişkenler (saat gibi) + ilan paylaşılacağı zaman belirli değişkenlerde öneri sunma (item thumbnail gibi): 269 TL
+        3- ilanları kategorize etme (knight ilanlar, özel logolar vs olacak denilen kısım): 120 TL
+        4- ilanlar, chat, pvp serverlar gibi kısımların hamburger menuye sıkıştırılması (frontend) + bakiye sistemin (TL ve Knight Coins) sisteme entegre edilmesi: 360 TL 
+        5- akaryakıt, oyun gibi ayrılmış menülerde farklı bir bağlantıya (cest) entegrasyonu, kullanıcıların isteklerine göre anasayfaya ya da özel sayfalara yönlendirecek: 399 TL
+        6- ilanlar sayfasında resme göre ilan verme değil belirli bilgiler ile ilan verme ve o bilgilere göre kategorize etme kısmı olacak: 200 TL
+
+      server kısım ( sahibinden gibi  satış eklentisi )  toplam -> 470 TL
+        1- serverlara 81 il eklenecek ( x ilanın altında 81 il var gibi ): 120 TL
+        2- illere göre chat olayı eklenecek (itemlerin satılacağı şehirler olacak): 350 TL
+
+
+      çeviri:
+        1- oyunlar bölümünde oyunlara tıklandığı zaman yazılar cevirilensin (çeviri kısmının nasıl olduğunun bilmiyorum o yüzden onu dahil etmeyeceğim)
+
+
+fiyat hesabı:
+  kullanıcı profili:  379 TL
+  ilanlar sayfası:    1818 TL
+
+  TOPLAM: 
+    toplam fiyat (iban üzerinden ödenecekse): 2197 TL
+    bionluk istesi üzerinden ödeyecekseniz eğer %20'lik kesintli olacak o kesinti ile beraber benim elime 2197 TL geçmesi için ödemeniz gereken tutar 2746,25 TL
+
