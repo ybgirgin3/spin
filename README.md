@@ -1,6 +1,8 @@
-__[+]: yapıldı__
-__[-]: hata alınıyor, üzerinden çalışıyor__ 
-__[?]: henüz o aşamaya gelinmedi__
+__[+]: yapıldı__<br>
+__[-]: hata alınıyor, üzerinden çalışıyor__ <br>
+__[?]: henüz o aşamaya gelinmedi__<br>
+
+
 ##TODO:
   - [+] 1- Kullanıcı Kayıt ve Giriş
   - [-] 2- İlan Ekleme Sayfası:
