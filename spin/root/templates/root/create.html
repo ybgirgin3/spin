@@ -10,10 +10,15 @@
 <h3>İtem Kaydı Oluştur</h3>
 <form method="post" action="/create/" class="form-group">
     {% csrf_token %}
-    <div class="input-group mb-3">
-        {{ form.name }}
+    <!-- <div class="input-group mb-3"> -->
+        <div>
+        {{ form.name }} <br>
+        {{ form.about_item }}<br>
+        {{ form.price }}<br>
+        {{ form.sold_badge }}<br>
        
-        <div class="input-group-prepend">
+        <!-- <div class="input-group-prepend"> -->
+            <div>
             <button type="submit" name="save" class="btn btn-success">Oluştur</button>
         </div>
     </div>

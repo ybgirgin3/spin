@@ -1,0 +1,28 @@
+{% extends "root/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} İlan Kaydı Oluştur {% endblock %}
+
+{% block content %} 
+{% if user.is_authenticated %}
+
+
+<!-- <h2>İlan Kayıt Ekranına Hoşgeldiniz</h2> -->
+
+<h3>İlan Kaydı Oluştur</h3>
+<form method="post" action="/create/" class="form-group">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        {{ form.name }}
+        
+    </div>
+    <div class="input-group-prepend">
+        <button type="submit" name="save" class="btn btn-success">Oluştur</button>
+    </div>
+</form>
+{% else %}
+  <p>Giriş Yapmamışsınız</p>
+  <a href="{% url 'login' %}">Giriş Yapın</a>
+{% endif %}
+
+{% endblock %}

@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
-from .models import Item, ItemSpec
+from .models import Item
 from .forms import CreateNewItem
 from django.utils import timezone
+
 
 
 # zaten eklenmiş olan öğe üzerinden listeleme ve değişiklik yapmaya yarayan fonk
@@ -44,6 +45,8 @@ def index(response, id):
 def home(response):
     return render(response, "root/home.html")
 
+
+t = Item()
 # yeni öğe oluşturmaya yarayan fonk
 def create(response):
     global t
@@ -58,11 +61,11 @@ def create(response):
         if form.is_valid():
             # girilen bilgileri veritabanına kaydet
             n = form.cleaned_data["name"]
-            t = Item(name=n, date=timezone.now())
+            t = Item(name=n)
             t.save()
             response.user.item.add(t)
             # kaydettikten sonra direk olarak o sayfaya git
-            return HttpResponseRedirect("/%i" %t.id)
+        return HttpResponseRedirect("/%i" %t.id)
     else:
         form = CreateNewItem()
     return render(response, "root/create.html", {'form': form})

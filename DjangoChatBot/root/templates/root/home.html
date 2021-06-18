@@ -1,0 +1,20 @@
+<!-- templates/home.html-->
+{% extends 'root/base.html' %}
+
+
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block content %}
+<h2>Spin Websitesine Hoşgeldiniz</h2>
+{% if user.is_authenticated %}
+  Merhaba Sayın, {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Çıkış yap</a></p>
+{% else %}
+  <p>Giriş yapmamışsınız gibi görünüyor</p>
+  Hizmetlerimizden yararlanmak için lütfen <a href="{% url 'login' %}">Giriş Yap</a>ın
+{% endif %}
+
+<br>
+İlanlar
+
+{% endblock %}

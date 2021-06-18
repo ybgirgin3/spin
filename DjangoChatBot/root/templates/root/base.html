@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% load static %}
+<link rel="stylesheet"  href="{%  static  'css/base.css'  %}">
+<link rel="stylesheet"  href="{%  static  'css/home.css'  %}">
+
+<title>{% block title %}İlan Kayit Sistemi{% endblock %}</title>
+</head>
+<body>
+    <div class="sidenav">
+		<a href="/">
+			<!-- <img src="{% static '/logo/logo.png' %}" alt="My image" style="width: 75px;"> -->
+		</a>
+		{% if user.is_authenticated %}
+
+			<a href="/">Anasayfa</a>
+			<a href="/create">Yeni İlan</a>
+			<a href="/view">İlanlarım</a>
+			<a href="/events">Tüm Liste</a>
+			<a href="/about">Hakkımızda</a>
+			<a href="{% url 'logout' %}">Çıkış Yap</a>
+
+		{% else %}
+			<a href="/events">Tüm Liste</a>
+			<a href="{% url 'login' %}">Giriş Yap</a>
+			<a href="/register">Kaydol</a>
+		{% endif %}
+
+	</div>
+
+    <div id="content" name="content" class="main">
+		<div class="row justify-content-center">
+			<div class="col-8">
+				<hr class="mt-0 mb-4">
+					{% block content %}
+					{% endblock %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
