@@ -2,6 +2,8 @@ from django.db import models
 #from django.contrib.auth.models import User
 from register.models import CustomUser as User
 
+# kategory kısmı eklenecek onda ise şehirler olacak
+
 # Create your models here.
 class ArizaKaydi(models.Model):
     user = models.ForeignKey(User,
@@ -12,7 +14,6 @@ class ArizaKaydi(models.Model):
 
     def __str__(self):
         return self.name
-
 
 
 

@@ -1,0 +1,14 @@
+{% extends 'root/base.html' %}
+{% block title %} İlanlarım {% endblock %}
+
+{% block content %}
+
+    <h2>İlanlarım</h2>
+    Siz ({{ user }}) Tarafından Paylaşılmış İlanlar
+    {% for td in user.post.all %}
+    <p>
+        <a href="/{{user}}/{{td.slug}}">{{td.name}}</a>
+    </p>
+
+
+{% endblock %}

@@ -11,7 +11,7 @@ __[?]: henüz o aşamaya gelinmedi__<br>
     - [+] ilan detayı alınması 
     - [-] ilan fiyatının alınması
     - [+] satılıp satılmadığına dair checkbox
-    - 
+
   - [+] 3- Var olan tüm ilanların gösterildiği sayfa
   - [+] 4- Kendi ilanlarımın gösterildiği sayfa
   - [?] 5- ilanların editlenip silinmesi
