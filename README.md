@@ -15,3 +15,7 @@ __[?]: henüz o aşamaya gelinmedi__<br>
   - [+] 3- Var olan tüm ilanların gösterildiği sayfa
   - [+] 4- Kendi ilanlarımın gösterildiği sayfa
   - [?] 5- ilanların editlenip silinmesi
+
+
+__error__
+<img src="spin2/error.png"/>
