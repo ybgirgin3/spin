@@ -4,6 +4,9 @@ from category.models import Category
 from django.utils.text import slugify
 from register.models import CustomUser as User
 
+CHOICES = [('34', 'İstanbul'), ('54', 'Sakarya')]
+
+
 # Create your models here.
 class PostModel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_user')
@@ -11,6 +14,7 @@ class PostModel(models.Model):
     about_post = models.CharField(max_length=200)
     price_net = MoneyField(amount_field="fiyat", currency_field="currency")
     #category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='post_category')
+    category = models.CharField(max_length=15)
     releaseDate = models.DateTimeField(auto_now_add=True)
     #image = models.ImageField(null=True, blank=True)
     slug = models.SlugField(unique=True, editable=False, max_length=130)

@@ -19,10 +19,12 @@ def createPostView(response):
             title = form.cleaned_data['title_field']
             about = form.cleaned_data['about_field']
             price = form.cleaned_data['price_field']
+            category = form.cleaned_data['category_field']
             p = PostModel(
                 title=title,
                 about_post=about,
                 price_net=price,
+                category=category
                 )
             # print(dir(response.user))
             response.user.post_user.add(p, bulk=False)
