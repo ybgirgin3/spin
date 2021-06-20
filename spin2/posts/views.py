@@ -42,4 +42,4 @@ def list_mine_view(response):
 
 def list_all_view(response):
     p = PostModel.objects.all()
-    return render(response, "post/post_all.html", {'posts': p})
+    return render(response, "posts/post_all.html", {'posts': p})

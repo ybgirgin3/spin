@@ -4,7 +4,6 @@ from django_prices.models import MoneyField
 from django.utils.text import slugify
 from register.models import CustomUser as User
 
-CHOICES = [('34', 'İstanbul'), ('54', 'Sakarya')]
 
 
 # Create your models here.
@@ -17,7 +16,6 @@ class PostModel(models.Model):
     currency  = models.CharField(max_length=5)
     #category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='post_category')
     category = models.CharField(max_length=15)
-    
     releaseDate = models.DateTimeField(auto_now_add=True)
     #image = models.ImageField(null=True, blank=True)
     slug = models.SlugField(unique=True, editable=False, max_length=130)

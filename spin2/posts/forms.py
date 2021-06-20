@@ -1,8 +1,10 @@
 from django import forms
-from django_prices.forms import MoneyField 
+# from django_prices.forms import MoneyField 
+from django.utils.translation import gettext_lazy as _
 
-AVAILABLE_CURRENCIES = [(1,"TL"),(2, "USD")]
-CATEGORIES = [('34', 'İstanbul'), ('54', 'Sakarya')]
+
+AVAILABLE_CURRENCIES = [("TL",_("TL")),("USD", _("USD"))]
+CATEGORIES = [("İstanbul", _('İstanbul')), ('Sakarya', _('Sakarya'))]
 
 class CreateNewPostForm(forms.Form):
     title_field = forms.CharField(label="İlan Adı", max_length=50)

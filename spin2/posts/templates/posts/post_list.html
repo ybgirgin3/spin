@@ -4,11 +4,15 @@
 {% block content %}
 
     <h2>İlanlarım</h2>
-    Siz ({{ user }}) Tarafından Paylaşılmış İlanlar
-    {% for td in user.post.all %}
-    <p>
-        <a href="/{{user}}/{{td.slug}}">{{td.name}}</a>
-    </p>
+    Siz ({{ user }}) Tarafınızdan Paylaşılmış İlanlar
+    {% for item in user.post_user.all %}
+        <div class="item_border">
+            <p>{{ item.title }} </p>
+            <p>{{ item.about_post }}</p>
+            <p>{{ item.price }} {{ item.currency }} </p>
+            <p>{{ item.category }} </p>
+
+        </div><br>
     {% endfor %}
 
 {% endblock %}
