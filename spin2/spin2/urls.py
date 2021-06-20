@@ -23,6 +23,6 @@ urlpatterns = [
     path("", include("django.contrib.auth.urls")),
     path('register/', RegisterView.as_view(), name='register'),
     path("", include("posts.urls")),
-    path("", include("category.urls")),
+    # path("", include("category.urls")),
 
 ]

@@ -1,6 +1,6 @@
 from django.db import models
 from django_prices.models import MoneyField
-from category.models import Category
+# from category.models import Category
 from django.utils.text import slugify
 from register.models import CustomUser as User
 
@@ -21,7 +21,7 @@ class PostModel(models.Model):
     releaseDate = models.DateTimeField(auto_now_add=True)
     #image = models.ImageField(null=True, blank=True)
     slug = models.SlugField(unique=True, editable=False, max_length=130)
-    # sold_or_not_model = models.BooleanField(default=False)
+    sold_or_not_model = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

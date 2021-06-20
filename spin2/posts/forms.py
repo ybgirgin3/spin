@@ -11,7 +11,7 @@ class CreateNewPostForm(forms.Form):
     price_field = forms.DecimalField(label='Fiyat')
     currency_field = forms.ChoiceField(widget=forms.Select, choices=AVAILABLE_CURRENCIES)
     category_field = forms.ChoiceField(widget=forms.Select, choices=CATEGORIES)
-    #sold_or_not_form = forms.BooleanField()
+    # sold_or_not_form = forms.BooleanField()
     
 
     
