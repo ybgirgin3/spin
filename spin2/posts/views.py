@@ -16,20 +16,20 @@ def createPostView(response):
     if response.method == 'POST':
         form = CreateNewPostForm(response.POST)
         if form.is_valid():
-            title_post = form.cleaned_data['title_field']
-            about_post = form.cleaned_data['about_field']
-            price_post = form.cleaned_data['price_field']
+            title = form.cleaned_data['title_field']
+            about = form.cleaned_data['about_field']
+            price = form.cleaned_data['price_field']
             p = PostModel(
-                title=title_post,
-                about_post=about_post,
-                price_net=price_post
+                title=title,
+                about_post=about,
+                price_net=price,
                 )
             # print(dir(response.user))
-            response.user.post_user.add(p)
+            response.user.post_user.add(p, bulk=False)
             p.save()
             
             p_slug = PostModel.objects.latest("id")
-        return HttpResponseRedirect("/posts" + p_slug.slug)
+        return HttpResponseRedirect("/posts/" + p_slug.slug)
     else:
         form = CreateNewPostForm()
     return render(response, "posts/post_create.html", {'form': form})

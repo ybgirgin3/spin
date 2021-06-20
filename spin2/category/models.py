@@ -4,6 +4,7 @@ from django.utils.text import slugify
 
 # model files of Category
 class Category(models.Model):
+    id = models.AutoField(db_column='category_id', primary_key = True)
     title = models.CharField(max_length=120)
     image = models.FileField(null=True, blank=True)
     slug = models.SlugField(unique=True, editable=False, max_length=130)
