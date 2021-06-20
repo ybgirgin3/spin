@@ -17,8 +17,10 @@
 <br>
 İlanlar
 <!-- bu kısma gelecek flexboxlar -->
+<div class="main_border">
 
 {% for item in posts %}
+<a href="/posts/{{item.slug}}">
   <div class="item_border">
   <ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ item.user }}
       <ul>
@@ -28,11 +30,12 @@
                   <li><span style="color: #28a745">ilan fiyatı:</span> {{ item.price }} {{ item.currency }}</li> 
                   <li><span style="color: #28a745">ilan kategorisi:</span> {{ item.category }}</li>  
               </ul>
-          </li>
+        </li>
       </ul>
   </ul>
   </div>
-  <br>
+</a>
 {% endfor %}
+</div>
 
 {% endblock %}

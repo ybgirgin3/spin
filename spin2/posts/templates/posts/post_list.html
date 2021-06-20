@@ -5,23 +5,20 @@
 
     <h2>İlanlarım</h2>
     Siz ({{ user }}) Tarafınızdan Paylaşılmış İlanlar
+    <div class="main_border">
+
     {% for item in user.post_user.all %}
     <a href="/posts/{{item.slug}}">
         <div class="item_border">
-            <ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ item.user }}
                 <ul>
                 <li><span style="color: #28a745">İlan Adı:</span> {{ item.title }}
-                        <ul>
-                            <li><span style="color: #28a745">ilan detayları:</span>  {{ item.about_post }}</li>
-                            <li><span style="color: #28a745">ilan fiyatı:</span> {{ item.price }} {{ item.currency }}</li> 
-                            <li><span style="color: #28a745">ilan kategorisi:</span> {{ item.category }}</li>  
-                        </ul>
-                    </li>
+                    <li><span style="color: #28a745">ilan detayları:</span>  {{ item.about_post }}</li>
+                </li>
                 </ul>
             </ul>
         </div>
     </a>
-        <br>
     {% endfor %}
+    </div>
 
 {% endblock %}

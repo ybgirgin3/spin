@@ -6,8 +6,10 @@
 </h2>
 
 
+<div class="main_border">
 
 {% for item in posts %}
+<a href="/posts/{{item.slug}}">
 <div class="item_border">
 <ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ item.user }}
     <ul>
@@ -22,7 +24,8 @@
         </li>
     </ul>
 </ul>
-</div>  <br>
+</div>
+</a>
 {% endfor %}
-
+</div>
 {% endblock %}

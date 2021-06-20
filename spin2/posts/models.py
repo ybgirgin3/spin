@@ -13,7 +13,7 @@ class PostModel(models.Model):
     about_post = models.CharField(max_length=200)
     # price = MoneyField(amount_field="fiyat", currency_field="currency")
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    currency  = models.CharField(max_length=5)
+    currency  = models.CharField(max_length=5, null=True)
     #category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='post_category')
     category = models.CharField(max_length=15)
     releaseDate = models.DateTimeField(auto_now_add=True)

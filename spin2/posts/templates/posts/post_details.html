@@ -4,5 +4,21 @@
 {% block content %}
 
     <h2>{{ post.title }} detayları</h2>
+        <div class="item_border">
+            <ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ post.user }}
+                <ul>
+                <li><span style="color: #28a745">İlan Adı:</span> {{ post.title }}
+                        <ul>
+                            <li><span style="color: #28a745">ilan detayları:</span>  {{ post.about_post }}</li>
+                            <li><span style="color: #28a745">ilan fiyatı:</span> {{ post.price }} {{ post.currency }}</li> 
+                            <li><span style="color: #28a745">ilan kategorisi:</span> {{ post.category }}</li>  
+                        </ul>
+                        {% if user == post.user %}
+                        <a href="/posts/{{post.slug}}/update">Güncelle</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </ul>
+        </div>
    
 {% endblock %}
