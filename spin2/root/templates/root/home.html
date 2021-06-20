@@ -7,7 +7,7 @@
 {% block content %}
 <h2>Spin Game Resmi Sitesine Hoşgeldiniz</h2>
 {% if user.is_authenticated %}
-  Merhaba Sayın, {{ user.username }}!
+  Merhaba Sayın, {{ user }}!
   <p><a href="{% url 'logout' %}">Çıkış yap</a></p>
 {% else %}
   <p>Giriş yapmamışsınız gibi görünüyor</p>
@@ -17,4 +17,22 @@
 <br>
 İlanlar
 <!-- bu kısma gelecek flexboxlar -->
+
+{% for item in posts %}
+  <div class="item_border">
+  <ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ item.user }}
+      <ul>
+        <li><span style="color: #28a745">İlan Adı:</span> {{ item.title }}
+              <ul>
+                  <li><span style="color: #28a745">ilan detayları:</span>  {{ item.about_post }}</li>
+                  <li><span style="color: #28a745">ilan fiyatı:</span> {{ item.price }} {{ item.currency }}</li> 
+                  <li><span style="color: #28a745">ilan kategorisi:</span> {{ item.category }}</li>  
+              </ul>
+          </li>
+      </ul>
+  </ul>
+  </div>
+  <br>
+{% endfor %}
+
 {% endblock %}
