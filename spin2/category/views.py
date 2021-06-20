@@ -8,7 +8,7 @@ def index_view(response):
     categories = Category.objects.all()
     return render(response, "category/categories.html", {"categories": categories})
 
-def category_view(response):
+def category_view(response, slug):
     categoryChoose = Category.objects.get(slug=slug)
     postsList = PostModel.objects.filter(category=categoryChoose)
     paginator = Paginator(postsList, 2)

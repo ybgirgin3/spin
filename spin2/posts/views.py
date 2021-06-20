@@ -19,14 +19,15 @@ def createPostView(response):
             title = form.cleaned_data['title_field']
             about = form.cleaned_data['about_field']
             price = form.cleaned_data['price_field']
+            currency = form.cleaned_data['currency_field']
             category = form.cleaned_data['category_field']
             p = PostModel(
                 title=title,
                 about_post=about,
-                price_net=price,
+                price=price,
+                currency=currency,
                 category=category
                 )
-            # print(dir(response.user))
             response.user.post_user.add(p, bulk=False)
             p.save()
             
@@ -36,5 +37,9 @@ def createPostView(response):
         form = CreateNewPostForm()
     return render(response, "posts/post_create.html", {'form': form})
 
-def list_view(response):
+def list_mine_view(response):
     return render(response, "posts/post_list.html")
+
+def list_all_view(response):
+    p = PostModel.objects.all()
+    return render(response, "post/post_all.html", {'posts': p})
