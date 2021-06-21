@@ -19,6 +19,8 @@ class PostModel(models.Model):
     releaseDate = models.DateTimeField(auto_now_add=True)
     #image = models.ImageField(null=True, blank=True)
     slug = models.SlugField(unique=True, editable=False, max_length=130)
+    
+    # bu kısım update ekranınıda olması lazım
     sold_or_not_model = models.BooleanField(default=False)
 
     def __str__(self):
