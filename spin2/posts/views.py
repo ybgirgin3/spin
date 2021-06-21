@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .models import PostModel
 from .forms import CreateNewPostForm
+from django.views.generic import UpdateView
+from django.urls import reverse_lazy
 # Create your views here.
 
 # oluşturduktan sonra detaylar sayfasında yönlendirsin
@@ -36,6 +38,14 @@ def createPostView(response):
     else:
         form = CreateNewPostForm()
     return render(response, "posts/post_create.html", {'form': form})
+
+class update_post_view(UpdateView):
+    model = PostModel
+    template_name = "posts/post_update.html"
+    # fields = "__all__"
+    fields = ('title', 'about_post', 'price', 'currency', 'category', 'sold_or_not_model')
+    # success_url = reverse_lazy('post_detail_view')
+
 
 def list_mine_view(response):
     return render(response, "posts/post_list.html")

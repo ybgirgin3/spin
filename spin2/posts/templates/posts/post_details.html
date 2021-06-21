@@ -4,10 +4,15 @@
 {% block content %}
 
     <h2>{{ post.title }} detayları</h2>
+        
         <div class="item_border">
             <ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ post.user }}
                 <ul>
-                <li><span style="color: #28a745">İlan Adı:</span> {{ post.title }}
+                {% if post.sold_or_not_model == True %}
+                <li><span style="color: #28a745">İlan Adı:</span> (SATILDI ✅) {{ post.title }}
+                {% else %}
+                <li><span style="color: #28a745">İlan Adı:</span> (SATIŞTA) {{ post.title }}
+                {% endif %}
                         <ul>
                             <li><span style="color: #28a745">ilan detayları:</span>  {{ post.about_post }}</li>
                             <li><span style="color: #28a745">ilan fiyatı:</span> {{ post.price }} {{ post.currency }}</li> 
