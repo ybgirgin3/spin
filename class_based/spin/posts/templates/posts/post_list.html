@@ -1,0 +1,24 @@
+{% extends 'root/base.html' %}
+{% block title %} İlanlarım {% endblock %}
+
+{% block content %}
+
+    <h2>İlanlarım</h2>
+    Siz ({{ user }}) Tarafınızdan Paylaşılmış İlanlar
+    <div class="main_border">
+
+    {% for item in user.post_user.all %}
+    <a href="/posts/{{item.slug}}">
+        <div class="item_border">
+                <ul>
+                <li><span style="color: #28a745">İlan Adı:</span> {{ item.title }}
+                    <li><span style="color: #28a745">ilan detayları:</span>  {{ item.about_post }}</li>
+                </li>
+                </ul>
+            </ul>
+        </div>
+    </a>
+    {% endfor %}
+    </div>
+
+{% endblock %}

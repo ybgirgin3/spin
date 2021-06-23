@@ -1,5 +1,5 @@
 from django.db import models
-from django_prices.models import MoneyField
+#from django_prices.models import MoneyField
 # from category.models import Category
 from django.utils.text import slugify
 from register.models import CustomUser as User

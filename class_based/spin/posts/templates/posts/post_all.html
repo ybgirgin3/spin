@@ -1,0 +1,31 @@
+{% extends "root/base.html" %}
+{% block content %}
+
+<h2>
+  Tüm Kayıtlı İlanlar
+</h2>
+
+
+<div class="main_border">
+
+{% for item in posts %}
+<a href="/posts/{{item.slug}}">
+<div class="item_border">
+<ul><span style="color: #28a745">Kullanıcı Adı:</span> {{ item.user }}
+    <ul>
+      <li><span style="color: #28a745">İlan Adı:</span> {{ item.title }}
+            <ul>
+                <li><span style="color: #28a745">ilan detayları:</span>  {{ item.about_post }}</li>
+                <li><span style="color: #28a745">ilan fiyatı:</span> {{ item.price }} {{ item.currency }}</li> 
+                <li><span style="color: #28a745">ilan kategorisi:</span> {{ item.category }}</li>
+                 
+            </ul>
+
+        </li>
+    </ul>
+</ul>
+</div>
+</a>
+{% endfor %}
+</div>
+{% endblock %}

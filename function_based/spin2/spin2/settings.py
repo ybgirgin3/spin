@@ -37,14 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # "category.apps.CategoryConfig",
     'posts.apps.PostsConfig',
     'register.apps.RegisterConfig',
     'root.apps.RootConfig',
-    
+
     # 3rd
-    'django_prices',
     'crispy_forms'
 ]
 
