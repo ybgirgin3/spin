@@ -8,7 +8,9 @@ class PostCreateView(generic.CreateView):
     model = PostModel
     # form_class = CreateNewPostForm
     template_name = 'posts/post_create.html'
-    # fields = '__all__'
+    exclude = ['User']
+    fields = '__all__'
+    """
     fields = [
         'title_field',
         'about_field',
@@ -17,12 +19,12 @@ class PostCreateView(generic.CreateView):
         'category_field',
         'sold_or_not_field'
     ]
-    
+    """
+
 class PostListAllView(generic.ListView):
     model = PostModel
     template_name = 'posts/post_all.html'
-    
-    
+
 class PostListMineView(generic.ListView):
     model = PostModel
     template_name = 'posts/post_list.html'
@@ -31,11 +33,13 @@ class PostListMineView(generic.ListView):
 class PostDetailsView(generic.DetailView):
     model = PostModel
     template_name = 'posts/post_details.html'
-    
-    
+
 class PostUpdateView(generic.UpdateView):
     model = PostModel
     template_name = 'posts/post_update.html'
+    exclude = ['sold_or_not_field']
+    fields = '__all__'
+    """
     fields = [
         'title_field',
         'about_field',
@@ -44,6 +48,7 @@ class PostUpdateView(generic.UpdateView):
         'category_field',
         'sold_or_not_field'
     ]
-    
+    """
+
 class PostDeleteView(generic.DeleteView):
     pass
